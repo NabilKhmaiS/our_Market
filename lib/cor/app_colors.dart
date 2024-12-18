@@ -8,9 +8,3 @@ class AppColors {
   static const Color kBlackColor = Color(0xFF17162B);
   static const Color kGreyColor = Colors.grey;
 }
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/NabilKhmaiS/ours_Maret.git
-git push -u origin main

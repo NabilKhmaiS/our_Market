@@ -1,4 +1,3 @@
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
 class AppColors {
@@ -9,3 +8,9 @@ class AppColors {
   static const Color kBlackColor = Color(0xFF17162B);
   static const Color kGreyColor = Colors.grey;
 }
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/NabilKhmaiS/ours_Maret.git
+git push -u origin main

@@ -12,9 +12,11 @@ class ourMarket extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginView(),
+      home: const LoginView(),
       title: 'our Market',
       debugShowCheckedModeBanner: false,
     );
   }
 }
+
+

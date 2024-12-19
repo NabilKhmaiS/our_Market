@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:our_market/cor/app_colors.dart';
-import 'package:our_market/features/ui/custom_text_from_field.dart';
+import 'package:our_market/features/ui/widgets/custom_text_from_field.dart';
 import 'package:our_market/features/ui/forget_view/custom_Elevated_Btn.dart';
 
 class ForgetViews  extends StatelessWidget {
@@ -35,6 +35,7 @@ class ForgetViews  extends StatelessWidget {
     child: Column(
     children: [
     CustomTextFromField(
+      keyboardType: TextInputType.emailAddress,
     labelText: 'Email',
     ),
     const SizedBox(height: 20,),

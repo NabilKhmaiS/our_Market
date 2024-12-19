@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:our_market/features/ui/custom_arrow_button.dart';
+import 'package:our_market/features/ui/widgets/custom_arrow_button.dart';
 
 class CustomRowWithArrowbtn extends StatelessWidget {
   const CustomRowWithArrowbtn({super.key, required this.text, this.onTap});

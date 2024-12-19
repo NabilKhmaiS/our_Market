@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:our_market/cor/app_colors.dart';
 
 class CustomTextFromField extends StatelessWidget {
-  const CustomTextFromField({super.key, required this.labelText, this.suffIcvon,  this.secure = false});
+  const CustomTextFromField({super.key, required this.labelText, this.suffIcvon,  this.secure = false, this.keyboardType});
 
   @override
   final String  labelText;
   final Widget? suffIcvon;
+  final TextInputType? keyboardType;
   final bool secure;
   Widget build(BuildContext context) {
     return TextFormField(
@@ -18,7 +19,7 @@ class CustomTextFromField extends StatelessWidget {
         }
         return null;
       },
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: keyboardType,
       decoration: InputDecoration(
         labelText: labelText,
         suffixIcon: suffIcvon,

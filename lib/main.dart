@@ -15,6 +15,8 @@ class ourMarket extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+
+
         scaffoldBackgroundColor: AppColors.kScaffoldColor,
         useMaterial3: true,
       ),

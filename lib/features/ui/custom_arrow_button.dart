@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:our_market/cor/app_colors.dart';
 
-class CustomEleved extends StatelessWidget {
-  const CustomEleved({super.key, this.onTap});
+class CustomArrowButton extends StatelessWidget {
+  const CustomArrowButton({super.key, this.onTap});
 
   @override
   final void Function()? onTap;

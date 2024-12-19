@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:our_market/cor/app_colors.dart';
+import 'package:our_market/cor/functions/navigate.dart';
 import 'package:our_market/features/ui/custom_row_with_arrowbtn.dart';
 import 'package:our_market/features/ui/custom_text_button.dart';
 import 'package:our_market/features/ui/custom_text_from_field.dart';
+import 'package:our_market/features/ui/forget_view/forget_views.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,11 +15,11 @@ class LoginView extends StatelessWidget {
         children: [
           SizedBox(height: 20,),
           Text("Welcome  To Our Market",style: TextStyle(
+
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),),
           SizedBox(height: 24,),
-
           Card(
             margin: EdgeInsets.all(24),
             color: AppColors.kWhiteColor,
@@ -34,17 +35,22 @@ class LoginView extends StatelessWidget {
                       labelText: 'Email',
                     ),
                     const SizedBox(height: 20,),
+
                     CustomTextFromField(
                       secure: true,
                       suffIcvon: IconButton(onPressed: (){}, icon: Icon(Icons.visibility_off)),
-                      labelText: 'pasward',
+                      labelText: 'password',
+
+
                     ),
                     SizedBox(height: 20,),
                     Row(
                      mainAxisAlignment: MainAxisAlignment.end,
                      children: [
                        CustomTextButton(text: "forGot password?",
-                       onTap: (){},
+                       onTap: (){
+                         navigateTo(context, ForgetViews());
+                       },
                        )
                      ],
                    ),
@@ -66,7 +72,8 @@ class LoginView extends StatelessWidget {
                         SizedBox(width: 8,),
                         CustomTextButton(text: "Sign up",onTap: (){},)
                       ],
-                    )
+                    ),
+
 
 
 

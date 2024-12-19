@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:our_market/cor/app_colors.dart';
 import 'package:our_market/cor/functions/navigate.dart';
 import 'package:our_market/features/ui/signup%20_views/signup_view.dart';
+import 'package:our_market/features/ui/widgets/custom_appbar.dart';
 import 'package:our_market/features/ui/widgets/custom_row_with_arrowbtn.dart';
 import 'package:our_market/features/ui/widgets/custom_text_button.dart';
 import 'package:our_market/features/ui/widgets/custom_text_from_field.dart';
@@ -15,11 +16,7 @@ class LoginView extends StatelessWidget {
       body: SafeArea(child: Column(
         children: [
           SizedBox(height: 20,),
-          Text("Welcome  To OurS Market",style: TextStyle(
-
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),),
+          CustomAppbar(),
           SizedBox(height: 24,),
           Card(
             margin: EdgeInsets.all(24),

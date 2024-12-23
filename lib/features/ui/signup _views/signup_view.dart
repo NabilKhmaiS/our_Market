@@ -11,15 +11,15 @@ class SignupView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(child: Column(
         children: [
-          SizedBox(height: 20,),
-          Text("Welcome  To OurS Market",style: TextStyle(
+          const SizedBox(height: 20,),
+          const Text("Welcome  To OurS Market",style: TextStyle(
 
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),),
-          SizedBox(height: 24,),
+          const SizedBox(height: 24,),
           Card(
-            margin: EdgeInsets.all(24),
+            margin: const EdgeInsets.all(24),
             color: AppColors.kWhiteColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
@@ -29,12 +29,12 @@ class SignupView extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    CustomTextFromField(
+                    const CustomTextFromField(
                       keyboardType: TextInputType.name,
                       labelText: 'name',
                     ),
                     const SizedBox(height: 20,),
-                    CustomTextFromField(
+                    const CustomTextFromField(
                       keyboardType: TextInputType.emailAddress,
                       labelText: 'Email',
                     ),
@@ -43,28 +43,28 @@ class SignupView extends StatelessWidget {
                     CustomTextFromField(
                       keyboardType: TextInputType.visiblePassword,
                       secure: true,
-                      suffIcvon: IconButton(onPressed: (){}, icon: Icon(Icons.visibility_off)),
+                      suffIcvon: IconButton(onPressed: (){}, icon: const Icon(Icons.visibility_off)),
                       labelText: 'password',
 
 
                     ),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
 
 
                     CustomRowWithArrowbtn(text: "Sign up",onTap: (){},),
 
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
                     CustomRowWithArrowbtn(text: "Login with Google",onTap: (){},),
-                    SizedBox(height: 20),
+                   const  SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Already Have an account?',style: TextStyle(
+                        const Text('Already Have an account?',style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold
                         ),),
-                        SizedBox(width: 8,),
+                       const  SizedBox(width: 8,),
                         CustomTextButton(text: "Login",onTap: (){
                           Navigator.pop(context);
                         },)

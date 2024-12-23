@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:our_market/cor/app_colors.dart';
 import 'package:our_market/cor/functions/navigate.dart';
+import 'package:our_market/features/home/main_home_view.dart';
 import 'package:our_market/features/ui/signup%20_views/signup_view.dart';
 import 'package:our_market/features/ui/widgets/custom_appbar.dart';
 import 'package:our_market/features/ui/widgets/custom_row_with_arrowbtn.dart';
@@ -15,11 +16,11 @@ class LoginView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(child: Column(
         children: [
-          SizedBox(height: 20,),
-          CustomAppbar(),
-          SizedBox(height: 24,),
+          const SizedBox(height: 20,),
+          const CustomAppbar(),
+          const SizedBox(height: 24,),
           Card(
-            margin: EdgeInsets.all(24),
+            margin: const EdgeInsets.all(24),
             color: AppColors.kWhiteColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
@@ -29,7 +30,7 @@ class LoginView extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    CustomTextFromField(
+                    const CustomTextFromField(
                       labelText: 'Email',
                       keyboardType: TextInputType.emailAddress,
 
@@ -39,40 +40,42 @@ class LoginView extends StatelessWidget {
                     CustomTextFromField(
                       keyboardType: TextInputType.visiblePassword,
                       secure: true,
-                      suffIcvon: IconButton(onPressed: (){}, icon: Icon(Icons.visibility_off)),
+                      suffIcvon: IconButton(onPressed: (){}, icon: const Icon(Icons.visibility_off)),
                       labelText: 'password',
 
 
                     ),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         CustomTextButton(text: "forGot password?",
                           onTap: (){
-                            navigateTo(context, ForgetViews());
+                            navigateTo(context, const ForgetViews());
                           },
                         )
                       ],
                     ),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
 
                     CustomRowWithArrowbtn(text: "Login",onTap: (){},),
 
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
-                    CustomRowWithArrowbtn(text: "Login with Google",onTap: (){},),
-                    SizedBox(height: 20),
+                    CustomRowWithArrowbtn(text: "Login with Google",onTap: (){
+                      navigateTo(context,  MainHomeView());
+                    },),
+                    const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Dont Have an account?',style: TextStyle(
+                        const Text('Dont Have an account?',style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold
                         ),),
-                        SizedBox(width: 8,),
+                        const SizedBox(width: 8,),
                         CustomTextButton(text: "Sign up",onTap: (){
-                          navigateTo(context, SignupView());
+                          navigateTo(context, const SignupView());
                         })
                       ],
                     ),

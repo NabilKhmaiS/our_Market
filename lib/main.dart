@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:our_market/cor/app_colors.dart';
+import 'package:our_market/features/home/main_home_view.dart';
 import 'package:our_market/features/ui/login_views/login_view.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class ourMarket extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.kScaffoldColor,
         useMaterial3: true,
       ),
-      home: const LoginView(),
+      home:  MainHomeView(),
       title: 'our Market',
       debugShowCheckedModeBanner: false,
       //

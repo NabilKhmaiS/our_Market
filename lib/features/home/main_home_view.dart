@@ -70,6 +70,7 @@ class MainHomeView extends StatelessWidget {
                   ),
                 ],
             ),
+
           ),
         ),
       );

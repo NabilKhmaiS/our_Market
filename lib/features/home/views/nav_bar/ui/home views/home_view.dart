@@ -29,8 +29,35 @@ class HomeView extends StatelessWidget {
             height: 15,
           ),
           const CategoryListview(),
+          SizedBox(
+            height: 15,
+          ),
+          Card(
+            //shape: RoundedRectangleBorder(
+             //   borderRadius: BorderRadius.all(Radius.circular(16))),
+            child: Column(
+              children: [
+                Stack(
+                  children: [
+                    ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(16),
+                          bottomRight: Radius.circular(16),
+                          bottomLeft: Radius.circular(16),
+                        ),
+                        child: Image(
+                          image: NetworkImage(
+                              "https://img.freepik.com/free-psd/black-friday-special-sale-social-media-post-design-template_47987-17538.jpg?t=st=1734987248~exp=1734990848~hmac=f6e35959bbcb50562ad458da1d5e6368036dfc117595cc402de8a209cb6b8c58&w=740"),
+                        ))
+                  ],
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
   }
 }
+//v
+

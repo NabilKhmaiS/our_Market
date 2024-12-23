@@ -16,10 +16,10 @@ class CategoryListview extends StatelessWidget {
           child: Column(
             children: [
               CircleAvatar(
-                radius: 30,
+                radius: 25,
                 backgroundColor: AppColors.kPrimaryColor,
                 foregroundColor: AppColors.kWhiteColor,
-                child: Icon(getCategories[index].icon,size: 40,),
+                child: Icon(getCategories[index].icon,size: 35,),
 
               ),
               Text(getCategories[index].text),

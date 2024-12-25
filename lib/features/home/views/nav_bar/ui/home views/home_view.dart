@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:our_market/cor/app_colors.dart';
 import 'package:our_market/cor/components/custom_search_field.dart';
 import 'package:our_market/features/home/views/nav_bar/ui/home%20views/Category_list%20view.dart';
+import 'package:our_market/features/ui/forget_view/custom_Elevated_Btn.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -70,7 +71,52 @@ class HomeView extends StatelessWidget {
 
                       )),
                   ],
+                ),
+                SizedBox(height: 15,),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Product Name ",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),),
+                          IconButton(onPressed: (){}, icon: Icon(Icons.favorite,color: AppColors.kGreyColor,)),
+
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Text("200 LE ",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),),
+                              Text(
+                                "120 lE ",
+                                style: TextStyle(
+                                  decoration: TextDecoration.lineThrough,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.kGreyColor,
+                                ),),
+                            ],
+                          ),
+                          CustomElevatedBtn(text: 'Buy Now',onTap: (){},)
+                        ],
+                      )
+                    ],
+                  ),
                 )
+
               ],
             ),
           )

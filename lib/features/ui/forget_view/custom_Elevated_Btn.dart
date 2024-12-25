@@ -3,7 +3,7 @@ import 'package:our_market/cor/app_colors.dart';
 
 class CustomElevatedBtn extends StatelessWidget {
   const CustomElevatedBtn({super.key, required this.text, this.onTap});
-final String text ;
+   final String text ;
   final void Function()? onTap;
 
   @override

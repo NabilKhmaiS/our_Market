@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:our_market/cor/app_colors.dart';
+import 'package:our_market/cor/functions/navigate.dart';
 import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widgets/CustomRowBtn.dart';
+import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widgets/edit_name_view.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -9,7 +11,9 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-       height: MediaQuery.sizeOf(context).height * .65,
+        height: MediaQuery
+            .sizeOf(context)
+            .height * .65,
         child: Card(
           margin: const EdgeInsets.all(24),
           color: AppColors.kWhiteColor,
@@ -25,12 +29,12 @@ class ProfileView extends StatelessWidget {
                     radius: 50,
                     backgroundColor: AppColors.kPrimaryColor,
                     foregroundColor: AppColors.kWhiteColor,
-                    child: Icon(Icons.person,size: 35,),
+                    child: Icon(Icons.person, size: 35,),
                   ),
                   SizedBox(height: 16),
                   Text(
                     'User name',
-                    style: TextStyle( fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 10),
                   Text(
@@ -39,7 +43,7 @@ class ProfileView extends StatelessWidget {
                   ),
                   SizedBox(height: 10,),
                   CustomRowBtn(
-                 onTap: (){},
+                    onTap: () {navigateTo(context, EditNameView());},
                     icon: Icons.person,
                     label: 'Edit Profile',
 
@@ -47,17 +51,14 @@ class ProfileView extends StatelessWidget {
                   ),
                   SizedBox(height: 10,),
                   CustomRowBtn(
-                  onTap: (){},
+                    onTap: () {},
                     icon: Icons.shopping_basket,
                     label: 'My Orders',),
                   SizedBox(height: 10,),
                   CustomRowBtn(
-                  onTap: (){},
+                    onTap: () {},
                     icon: Icons.logout,
                     label: 'Logout',),
-
-
-
 
 
                 ],
@@ -69,6 +70,6 @@ class ProfileView extends StatelessWidget {
       ),
     );
   }
+
+
 }
-
-

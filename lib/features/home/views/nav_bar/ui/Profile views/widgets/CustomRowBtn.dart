@@ -15,7 +15,6 @@ class CustomRowBtn extends StatelessWidget {
       color: AppColors.kPrimaryColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(16)),
-
       ),
       child: InkWell(
         onTap: onTap,
@@ -25,7 +24,6 @@ class CustomRowBtn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Icon(Icons.person,color: AppColors.kWhiteColor,),
-
               Text(label,style: TextStyle(color: AppColors.kWhiteColor,fontWeight: FontWeight.bold),),
               Icon(icon,color: AppColors.kWhiteColor)
 

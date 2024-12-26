@@ -18,16 +18,17 @@ class CustomSearchField extends StatelessWidget {
                 )
             ),
             onPressed: (){}, label: Icon(Icons.search)),
-      border: OutlineInputBorder(
+        border: OutlineInputBorder(
         borderSide:const  BorderSide(color: AppColors.kBordersideColor,width: 1),
         borderRadius: BorderRadius.circular(8),
 
       ),
-      enabledBorder: OutlineInputBorder(
+          enabledBorder: OutlineInputBorder(
           borderSide:const  BorderSide(color: AppColors.kBordersideColor,width: 2),
           borderRadius: BorderRadius.circular(8)
       ),
-      focusedBorder: OutlineInputBorder(
+          focusedBorder: OutlineInputBorder(
+
           borderSide:const  BorderSide(color: AppColors.kBordersideColor,width: 2),
           borderRadius: BorderRadius.circular(8),
 

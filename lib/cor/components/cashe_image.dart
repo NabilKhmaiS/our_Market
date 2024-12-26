@@ -9,6 +9,7 @@ class CasheImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
+
       imageUrl:   url,
       placeholder: (context, url) => SizedBox(height: 200,
           child: CustomCircularprogindicator()

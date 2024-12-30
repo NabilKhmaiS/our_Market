@@ -19,7 +19,7 @@ class CustomSearchField extends StatelessWidget {
             ),
             onPressed: (){}, label: Icon(Icons.search)),
         border: OutlineInputBorder(
-        borderSide:const  BorderSide(color: AppColors.kBordersideColor,width: 1),
+        borderSide:const  BorderSide(color: AppColors.kBordersideColor,width: 2),
         borderRadius: BorderRadius.circular(8),
 
       ),

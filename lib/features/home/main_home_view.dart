@@ -11,11 +11,11 @@ import 'views/nav_bar/logic/nev_bar_cubit.dart';
 class MainHomeView extends StatelessWidget {
    MainHomeView({super.key});
 
-  final List<Widget> views = [
-    HomeView(),
-    StoreViews(),
-    FavoriteView(),
-    ProfileView(),
+  final List <Widget> views = [
+    HomeView (),
+    StoreViews (),
+    FavoriteView (),
+    ProfileView (),
 
   ];
   @override
@@ -68,6 +68,7 @@ class MainHomeView extends StatelessWidget {
                     icon: Icons.person,
                     text: 'Profile',
                   ),
+
                 ],
             ),
 

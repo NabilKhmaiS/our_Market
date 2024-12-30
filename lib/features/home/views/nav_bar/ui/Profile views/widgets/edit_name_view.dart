@@ -20,8 +20,6 @@ class EditNameView extends StatelessWidget {
             ),
             SizedBox(height: 14,),
             CustomElevatedBtn(text: 'Update', onTap: () {},)
-
-
           ],
         ),
       ),

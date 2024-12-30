@@ -11,17 +11,17 @@ class ourMarket extends StatelessWidget {
 
   // This widget is the root of your application.
   // This method builds the widget tree.
-  // This widget is the root of your application.
   // this widget is the root of your application
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       // Set the app's theme'
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.kScaffoldColor,
         useMaterial3: true,
       ),
-      home: MainHomeView() ,
+      home: MainHomeView(),
       title: 'our Market',
       debugShowCheckedModeBanner: false,
       //

@@ -3,6 +3,7 @@ import 'package:our_market/cor/app_colors.dart';
 import 'package:our_market/cor/functions/navigate.dart';
 import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widgets/CustomRowBtn.dart';
 import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widgets/edit_name_view.dart';
+import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widgets/my_orders.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -51,7 +52,7 @@ class ProfileView extends StatelessWidget {
                   ),
                   SizedBox(height: 10,),
                   CustomRowBtn(
-                    onTap: () {},
+                    onTap: () {navigateTo(context, MyOrders());},
                     icon: Icons.shopping_basket,
                     label: 'My Orders',),
                   SizedBox(height: 10,),

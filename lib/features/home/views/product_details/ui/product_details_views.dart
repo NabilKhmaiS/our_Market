@@ -1,9 +1,10 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:our_market/cor/components/cashe_image.dart';
 import 'package:our_market/cor/functions/buildAppBar.dart';
+import 'package:our_market/features/home/views/product_details/widgets/comments_list.dart';
+import 'package:our_market/features/ui/widgets/custom_text_from_field.dart';
 
 class ProductDetailsViews extends StatelessWidget {
   const ProductDetailsViews({super.key});
@@ -62,6 +63,26 @@ class ProductDetailsViews extends StatelessWidget {
                 print(rating);
               },
             ),
+                SizedBox(height: 40,),
+                CustomTextFromField(
+                  labelText: 'type your feedback',
+                  suffIcvon: IconButton(onPressed: (){}, icon: Icon(Icons.send)),
+                ),
+                SizedBox(height: 15,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text("Comment",style: TextStyle(
+                    fontSize: 18,
+                    
+                  ),),
+                ],
+              ),
+                SizedBox(
+                  height: 15,
+                ),
+               commentsList()
+
 
               ],
             ),
@@ -73,3 +94,6 @@ class ProductDetailsViews extends StatelessWidget {
     );
   }
 }
+
+
+

@@ -15,7 +15,6 @@ class ourMarket extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       // Set the app's theme'
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.kScaffoldColor,

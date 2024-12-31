@@ -30,7 +30,7 @@ class HomeView extends StatelessWidget {
             height: 15,
           ),
           const CategoryListview(),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           const Text(
@@ -41,7 +41,6 @@ class HomeView extends StatelessWidget {
           ),
          const  SizedBox(height: 15,),
          const  Productslist(
-
          ),
 
         ],

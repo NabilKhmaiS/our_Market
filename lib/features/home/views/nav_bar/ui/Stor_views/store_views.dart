@@ -11,15 +11,15 @@ class StoreViews extends StatelessWidget {
       Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
-          children: [
-            Center(
+          children: const [
+             Center(
               child: Text("Welcome to our Market",style:
                 TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
             ),
-            SizedBox(height: 15,),
-            CustomSearchField(),
-            SizedBox(height: 15,),
-            Productslist(),
+             SizedBox(height: 15,),
+             CustomSearchField(),
+             SizedBox(height: 15,),
+             Productslist(),
 
 
           ],

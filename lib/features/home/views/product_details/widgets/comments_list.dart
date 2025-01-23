@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:our_market/cor/app_colors.dart';
 
 class commentsList extends StatelessWidget {
   const commentsList({
@@ -12,7 +13,9 @@ class commentsList extends StatelessWidget {
     return ListView.separated(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
-        itemBuilder: (context, index) => User_Coment(), separatorBuilder: (context, index) => Divider(), itemCount: 10);
+        itemBuilder: (context, index) => User_Coment(), separatorBuilder: (context, index) => Divider(
+      color: AppColors.kPrimaryColor,
+    ), itemCount: 10);
   }
 }
 
@@ -58,4 +61,6 @@ class User_Coment extends StatelessWidget {
     );
   }
 }
+
+
 

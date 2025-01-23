@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'package:our_market/cor/components/custom_search_field.dart';
 import 'package:our_market/cor/components/products-List.dart';
 import 'package:our_market/features/home/views/nav_bar/ui/home%20views/Category_list%20view.dart';
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
+// const HomeView
 
   @override
   Widget build(BuildContext context) {
@@ -48,5 +48,6 @@ class HomeView extends StatelessWidget {
     );
   }
 }
+
 
 

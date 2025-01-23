@@ -9,7 +9,7 @@ class FavoriteView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ListView(
-        children: [
+        children: const [
           Center(
             child: Text("Yoyr favorite Products",style:
             TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),

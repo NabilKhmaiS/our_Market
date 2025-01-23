@@ -10,7 +10,7 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Center  (
       child: SizedBox(
         height: MediaQuery
             .sizeOf(context)

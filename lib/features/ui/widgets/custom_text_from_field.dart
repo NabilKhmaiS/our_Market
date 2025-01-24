@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:our_market/cor/app_colors.dart';
 
 class CustomTextFromField extends StatelessWidget {
-  const CustomTextFromField({super.key, required this.labelText, this.suffIcvon,  this.secure = false, this.keyboardType});
+  const CustomTextFromField({super.key, required this.labelText, this.suffIcvon,  this.secure = false, this.keyboardType,  this.Controller});
 
   @override
   final String  labelText;
   final Widget? suffIcvon;
   final TextInputType? keyboardType;
   final bool secure;
+  final TextEditingController? Controller;
+
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: Controller,
       obscureText: secure,
      // obscuringCharacter: "*",
       validator: (value){

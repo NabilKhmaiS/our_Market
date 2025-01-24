@@ -15,7 +15,11 @@ final class LoginError extends AuthenticationState {
 
 final class SignupSuccess extends AuthenticationState {}
 final class SignupLoading extends AuthenticationState {}
-final class SignupError extends AuthenticationState {}
+
+final class SignupError extends AuthenticationState {
+  final String message;
+  SignupError(this.message);
+}
 
 
 

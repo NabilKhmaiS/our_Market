@@ -27,8 +27,7 @@ class ourMarket extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.kScaffoldColor,
         useMaterial3: true,
       ),
-      home: MainHomeView
-        (),
+      home: MainHomeView(),
       title: 'our Market',
       debugShowCheckedModeBanner: false,
       //

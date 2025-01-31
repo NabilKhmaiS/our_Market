@@ -24,6 +24,7 @@ class _LoginViewState extends State<LoginView> {
   final TextEditingController emailController= TextEditingController();
   final TextEditingController passwordController= TextEditingController();
   final GlobalKey<FormState>_formkey= GlobalKey<FormState>();
+  bool ispasswordhidden = true;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthenticationCubit, AuthenticationState>(
@@ -71,9 +72,13 @@ class _LoginViewState extends State<LoginView> {
                           CustomTextFromField(
                             controller: passwordController,
                             keyboardType: TextInputType.visiblePassword,
-                            secure: true,
-                            suffIcvon: IconButton(onPressed: () {},
-                                icon: const Icon(Icons.visibility_off)),
+                            secure: ispasswordhidden,
+                            suffIcvon: IconButton(onPressed: () {
+                              setState(() {
+                                ispasswordhidden = ! ispasswordhidden;
+                              });
+                            },
+                                icon:  Icon(ispasswordhidden?Icons.visibility: Icons.visibility_off)),
                             labelText: 'password',
 
 

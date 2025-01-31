@@ -28,6 +28,11 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthenticationCubit, AuthenticationState>(
       listener: (context, state) {
+        if (state is LoginSuccess) {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => MainHomeView()));
+        }
+
        if(state is LoginError){
          showSnackBar(context,state.message);
 
@@ -36,7 +41,8 @@ class _LoginViewState extends State<LoginView> {
       builder: (context, state) {
         AuthenticationCubit cubit = context.read<AuthenticationCubit>();
         return Scaffold(
-          body: state is LoginSLoading ? CustomCircularprogindicator(): SafeArea(child: Column(
+          body: state is LoginSLoading ? const CustomCircularprogindicator()
+              :  SafeArea(child: Column(
             children: [
               const SizedBox(height: 20,),
               const CustomAppbar(),
@@ -52,11 +58,10 @@ class _LoginViewState extends State<LoginView> {
                   child: SingleChildScrollView(
                     child: Form(
                       key: _formkey,
-
                       child: Column(
                         children: [
                            CustomTextFromField(
-                            Controller: emailController,
+                            controller: emailController,
                             labelText: 'Email',
                             keyboardType: TextInputType.emailAddress,
 
@@ -64,7 +69,7 @@ class _LoginViewState extends State<LoginView> {
                           const SizedBox(height: 20,),
 
                           CustomTextFromField(
-                            Controller: passwordController,
+                            controller: passwordController,
                             keyboardType: TextInputType.visiblePassword,
                             secure: true,
                             suffIcvon: IconButton(onPressed: () {},
@@ -77,7 +82,7 @@ class _LoginViewState extends State<LoginView> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              CustomTextButton(text: "forGot password?",
+                              CustomTextButton(text: "forgot password?",
                                 onTap: () {
                                   navigateTo(context, const ForgetViews());
                                 },
@@ -88,8 +93,8 @@ class _LoginViewState extends State<LoginView> {
 
                           CustomRowWithArrowbtn(
                             text: "Login", onTap: () {
-                              if(_formkey.currentState!.validate()) {
-                                cubit.Login(email: emailController.text, password: passwordController.text);
+                              if(_formkey.currentState! .validate()) {
+                                cubit.login(email: emailController.text, password: passwordController.text);
 
                               }
                           },),
@@ -109,6 +114,7 @@ class _LoginViewState extends State<LoginView> {
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold
                               ),),
+
                               const SizedBox(width: 8,),
                               CustomTextButton(text: "Sign up", onTap: () {
                                 navigateTo(context, const SignupView());
@@ -130,9 +136,12 @@ class _LoginViewState extends State<LoginView> {
       },
     );
   }
+
+
   @override
 void dispose ()      {
     emailController.dispose();
+    passwordController.dispose();
     super.dispose();
 }
 

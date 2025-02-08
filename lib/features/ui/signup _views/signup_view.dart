@@ -21,12 +21,14 @@ class _SignupViewState extends State<SignupView> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
+  bool ispasswordhidden = true;
+
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthenticationCubit, AuthenticationState>(
       listener: (context, state) {
-        if (state is SignupSuccess) {
+        if (state is SignupSuccess || state is GoogleSigneSuccess) {
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => MainHomeView()));
         }
@@ -78,11 +80,18 @@ class _SignupViewState extends State<SignupView> {
                           CustomTextFromField(
                             controller: _passwordController,
                             keyboardType: TextInputType.visiblePassword,
-                            secure: true,
-                            suffIcvon: IconButton(onPressed: () {},
-                                icon: const Icon(Icons.visibility_off)),
-                            labelText: 'password',
-
+                            secure: ispasswordhidden, //
+                            suffIcvon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  ispasswordhidden = !ispasswordhidden;
+                                });
+                              },
+                              icon: Icon(
+                                ispasswordhidden ? Icons.visibility_off : Icons.visibility,
+                              ),
+                            ),
+                            labelText: 'Password',
                           ),
                           const SizedBox(height: 20,),
 
@@ -96,7 +105,10 @@ class _SignupViewState extends State<SignupView> {
                           const SizedBox(height: 20),
 
                           CustomRowWithArrowbtn(
-                            text: "Login with Google", onTap: () {},),
+                            text: "Login with Google", onTap: () {
+                              context.read<AuthenticationCubit>().googleSignIn();
+
+                          },),
                           const SizedBox(height: 20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,

@@ -29,7 +29,7 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthenticationCubit, AuthenticationState>(
       listener: (context, state) {
-        if (state is LoginSuccess) {
+        if (state is LoginSuccess || state is GoogleSigneSuccess) {
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => MainHomeView()));
         }
@@ -42,6 +42,9 @@ class _LoginViewState extends State<LoginView> {
       builder: (context, state) {
         AuthenticationCubit cubit = context.read<AuthenticationCubit>();
         return Scaffold(
+          appBar: AppBar(
+            
+          ),
           body: state is LoginSLoading ? const CustomCircularprogindicator()
               :  SafeArea(child: Column(
             children: [
@@ -107,9 +110,11 @@ class _LoginViewState extends State<LoginView> {
                           const SizedBox(height: 20),
 
                           CustomRowWithArrowbtn(
-                            text: "Login with Google", onTap: () {
-                            navigateTo(context, MainHomeView());
-                          },),
+                            text: "Login with Google",
+                            onTap: () => cubit.googleSignIn(),
+
+
+                          ),
                           const SizedBox(height: 20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,

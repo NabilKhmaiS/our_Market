@@ -16,7 +16,17 @@ final class SignupLoading extends AuthenticationState {}
 final class SignupError extends AuthenticationState {
   final String message;
   SignupError(this.message);
+
+
+
 }
+final class GoogleSigneSuccess extends AuthenticationState{}
+final class GoogleSigneLoading extends AuthenticationState {}
+final class GoogleSigneError extends AuthenticationState {
+
+}
+
+
 
 
 

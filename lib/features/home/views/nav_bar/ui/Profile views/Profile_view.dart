@@ -1,16 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:our_market/cor/app_colors.dart';
+import 'package:our_market/cor/components/custom_circularprogindicator.dart';
 import 'package:our_market/cor/functions/navigate.dart';
+import 'package:our_market/features/home/main_home_view.dart';
 import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widgets/CustomRowBtn.dart';
 import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widgets/edit_name_view.dart';
 import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widgets/my_orders.dart';
+import 'package:our_market/features/logic/cubit/authentication_cubit.dart';
+import 'package:our_market/features/ui/login_views/login_view.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center  (
+    return BlocConsumer<AuthenticationCubit, AuthenticationState>(
+
+        listener: (context, state) {
+      if (state is LogoutSuccess) {
+       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginView(),));
+      }
+    },
+    builder: (context, state) {
+
+
+
+
+    return state is LogoutLoading? CustomCircularprogindicator(): Center(
       child: SizedBox(
         height: MediaQuery
             .sizeOf(context)
@@ -57,7 +74,11 @@ class ProfileView extends StatelessWidget {
                     label: 'My Orders',),
                   SizedBox(height: 10,),
                   CustomRowBtn(
-                    onTap: () {},
+                    onTap: ()async {
+
+
+                  await context.read<AuthenticationCubit>().signOut();
+                    },
                     icon: Icons.logout,
                     label: 'Logout',),
 
@@ -69,6 +90,8 @@ class ProfileView extends StatelessWidget {
 
         ),
       ),
+    );
+  }
     );
   }
 

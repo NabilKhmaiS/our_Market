@@ -25,6 +25,11 @@ final class GoogleSigneLoading extends AuthenticationState {}
 final class GoogleSigneError extends AuthenticationState {
 
 }
+final class LogoutLoading extends AuthenticationState{}
+final class LogoutSuccess  extends AuthenticationState{}
+final class LogoutError extends AuthenticationState {
+
+}
 
 
 

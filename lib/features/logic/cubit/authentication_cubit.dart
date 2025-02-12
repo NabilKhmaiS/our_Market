@@ -75,6 +75,7 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
         idToken: idToken,
         accessToken: accessToken,
       );
+      await addUserDate(name: googleUser!.displayName!, email: googleUser!.email);
       emit(GoogleSigneSuccess());
       return response;
     }
@@ -110,7 +111,7 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
        try{
          await client
              .from('user')
-             .insert({"user_id":client.auth.currentUser!.id,"name": name ,"email": email });
+             .upsert({"user_id":client.auth.currentUser!.id,"name": name ,"email": email });
          emit(UserDateAddedSuccess());
 
 

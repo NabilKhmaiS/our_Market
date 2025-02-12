@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:our_market/cor/app_colors.dart';
 import 'package:our_market/cor/components/custom_circularprogindicator.dart';
 import 'package:our_market/cor/functions/navigate.dart';
-import 'package:our_market/features/home/main_home_view.dart';
 import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widgets/CustomRowBtn.dart';
 import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widgets/edit_name_view.dart';
 import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widgets/my_orders.dart';
@@ -12,6 +11,8 @@ import 'package:our_market/features/ui/login_views/login_view.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
+  final double margin = 24;
+  final double radius = 50;
 
   @override
   Widget build(BuildContext context) {
@@ -19,21 +20,19 @@ class ProfileView extends StatelessWidget {
 
         listener: (context, state) {
       if (state is LogoutSuccess) {
-       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginView(),));
+       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginView(),));
       }
     },
     builder: (context, state) {
 
 
-
-
-    return state is LogoutLoading? CustomCircularprogindicator(): Center(
+    return state is LogoutLoading ? const CustomCircularprogindicator(): Center(
       child: SizedBox(
         height: MediaQuery
             .sizeOf(context)
             .height * .65,
         child: Card(
-          margin: const EdgeInsets.all(24),
+          margin:  EdgeInsets.all(margin.toDouble()),
           color: AppColors.kWhiteColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
@@ -43,36 +42,36 @@ class ProfileView extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  CircleAvatar(
-                    radius: 50,
+                   CircleAvatar(
+                    radius: radius.toDouble(),
                     backgroundColor: AppColors.kPrimaryColor,
                     foregroundColor: AppColors.kWhiteColor,
                     child: Icon(Icons.person, size: 35,),
                   ),
-                  SizedBox(height: 16),
-                  Text(
+                  const SizedBox(height: 16),
+                  const Text(
                     'User name',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     ' User Email',
-                    style: TextStyle(),
+                    style:  TextStyle(),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   CustomRowBtn(
-                    onTap: () {navigateTo(context, EditNameView());},
+                    onTap: () {navigateTo(context, const EditNameView());},
                     icon: Icons.person,
                     label: 'Edit Profile',
 
 
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   CustomRowBtn(
-                    onTap: () {navigateTo(context, MyOrders());},
+                    onTap: () {navigateTo(context, const MyOrders());},
                     icon: Icons.shopping_basket,
                     label: 'My Orders',),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   CustomRowBtn(
                     onTap: ()async {
 

@@ -36,6 +36,8 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   supabase_flutter: ^2.8.0
   google_sign_in: ^6.2.2
+  carousel_slider: ^5.0.0
+
 
 
 

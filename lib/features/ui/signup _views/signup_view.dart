@@ -38,7 +38,6 @@ class _SignupViewState extends State<SignupView> {
         }
       },
       builder: (context, state) {
-
         return Scaffold(
           body: state is SignupLoading
               ? const CustomCircularprogindicator()

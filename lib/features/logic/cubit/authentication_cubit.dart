@@ -34,7 +34,9 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
         password: password,
         data: {'name': name}, // تخزين الاسم مع الحساب الجديد
       );
+      await addUserDate(name: name, email: email);
       emit(SignupSuccess());
+
     } on AuthException catch (e) {
       log(e.toString());
       emit(SignupError(e.message));
@@ -49,7 +51,6 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
       emit(GoogleSigneLoading());
 
       const webClientId = '690618612967-889jfjhcpmtqnndrfntm1bcd17q3dfv0.apps.googleusercontent.com';
-
 
       final GoogleSignIn googleSignIn = GoogleSignIn(
       //  clientId: iosClientId,
@@ -88,7 +89,39 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
       emit(LogoutError());
 
     }
+
     }
+    Future<void> resetPassword ({required String email}) async{
+       emit(PasswordResetLoading());
+       try{
+         await client.auth.resetPasswordForEmail(email);
+         emit(PasswordResetSuccess());
+       }catch (e)
+      {
+        log(e.toString());
+        emit(PasswordResetError());
+      }
+
+      }
+
+      Future<void>addUserDate({required String name,required String email }) async{
+       emit(UserDateAddedLoading());
+
+       try{
+         await client
+             .from('user')
+             .insert({"user_id":client.auth.currentUser!.id,"name": name ,"email": email });
+         emit(UserDateAddedSuccess());
+
+
+       }catch (e) {
+         log(e.toString());
+         emit(UserDateAddedError());
+
+       }
+
+
+      }
 
 }
 

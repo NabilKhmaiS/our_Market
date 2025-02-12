@@ -12,10 +12,10 @@ class MainHomeView extends StatelessWidget {
    MainHomeView({super.key});
 
   final List <Widget> views = [
-    HomeView (),
-    StoreViews (),
-    FavoriteView (),
-    ProfileView (),
+    const HomeView (),
+    const StoreViews (),
+    const FavoriteView (),
+    const ProfileView (),
 
   ];
   @override
@@ -28,11 +28,11 @@ class MainHomeView extends StatelessWidget {
     return Scaffold(
         body: SafeArea(child: views[cubit.currentIndex]),
         bottomNavigationBar: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: AppColors.kWhiteColor
           ),
           child: Padding(
-            padding:  EdgeInsets.symmetric(vertical: 8,horizontal: 15),
+            padding:  const EdgeInsets.symmetric(vertical: 8,horizontal: 15),
             child: GNav(
               onTabChange: (index) {
                 cubit.ChangeCurrentIndex(index);
@@ -44,14 +44,14 @@ class MainHomeView extends StatelessWidget {
                 //tabBorderRadius: 15,
               //  tabShadow: [BoxShadow(color: Colors.grey.withOpacity(0.5), blurRadius: 8)], // tab button shadow
               //  curve: Curves.easeOutExpo, // tab animation curves
-                duration: Duration(milliseconds: 400), // tab animation duration
+                duration: const Duration(milliseconds: 400), // tab animation duration
                 gap: 8, // the tab button gap between icon and text
                 color: AppColors.kGreyColor, // unselected icon color
                 activeColor: AppColors.kWhiteColor, // selected icon and text color
                 iconSize: 24, // tab button icon size
                 tabBackgroundColor: AppColors.kPrimaryColor, // selected tab background color
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12), // navigation bar padding
-                tabs: [
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12), // navigation bar padding
+                tabs: const [
                   GButton(
                     icon: Icons.home,
                     text: 'Home',

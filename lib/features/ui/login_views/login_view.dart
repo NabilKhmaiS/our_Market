@@ -92,7 +92,7 @@ class _LoginViewState extends State<LoginView> {
                             children: [
                               CustomTextButton(text: "forgot password?",
                                 onTap: () {
-                                  navigateTo(context, const ForgetViews());
+                                  navigateTo(context,  ForgetViews());
                                 },
                               )
                             ],

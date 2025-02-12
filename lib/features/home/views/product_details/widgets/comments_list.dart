@@ -14,7 +14,12 @@ class commentsList extends StatelessWidget {
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) => User_Coment(), separatorBuilder: (context, index) => Divider(
-      color: AppColors.kPrimaryColor,
+      //height: 2,
+      //endIndent: 2,
+      thickness: 2,
+      indent: 20,
+
+      color: AppColors.kBlackColor,
     ), itemCount: 10);
   }
 }

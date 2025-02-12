@@ -11,8 +11,52 @@ class FavoriteView extends StatelessWidget {
       child: ListView(
         children: const [
           Center(
-            child: Text("Yoyr favorite Products",style:
-            TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+            child:
+            Text.rich(
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: "Y",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "ouer ",
+                    style: TextStyle(
+                      color: Colors.black, //
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "Favorites",
+                    style: TextStyle(
+                      //color: Colors.blue, //
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "Products",
+                    style: TextStyle(
+                      fontSize: 25,
+                     // color: Colors.blue, //
+                      fontWeight: FontWeight.bold,
+                    )),
+                  TextSpan(
+                    text: "S",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue, //
+                    )),
+                ],
+
+              ),
+            ),
           ),
           SizedBox(height: 15,),
           Productslist()

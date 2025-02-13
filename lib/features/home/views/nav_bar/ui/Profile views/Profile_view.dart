@@ -17,7 +17,9 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthenticationCubit, AuthenticationState>(
+    return BlocProvider(
+  create: (context) => AuthenticationCubit()..geyUserDate(),
+  child: BlocConsumer<AuthenticationCubit, AuthenticationState>(
 
         listener: (context, state) {
       if (state is LogoutSuccess) {
@@ -27,7 +29,7 @@ class ProfileView extends StatelessWidget {
     builder: (context, state) {
       UserDataModal? user = context.read<AuthenticationCubit>().userDateModel;
 
-    return state is LogoutLoading ? const CustomCircularprogindicator(): Center(
+    return state is LogoutLoading || state is  GoogleSigneLoading? const CustomCircularprogindicator(): Center(
       child: SizedBox(
         height: MediaQuery
             .sizeOf(context)
@@ -90,7 +92,8 @@ class ProfileView extends StatelessWidget {
       ),
     );
   }
-    );
+    ),
+);
   }
 
 

@@ -7,6 +7,7 @@ import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widget
 import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widgets/edit_name_view.dart';
 import 'package:our_market/features/home/views/nav_bar/ui/Profile%20views/widgets/my_orders.dart';
 import 'package:our_market/features/logic/cubit/authentication_cubit.dart';
+import 'package:our_market/features/logic/modal/user_modals.dart';
 import 'package:our_market/features/ui/login_views/login_view.dart';
 
 class ProfileView extends StatelessWidget {
@@ -24,13 +25,13 @@ class ProfileView extends StatelessWidget {
       }
     },
     builder: (context, state) {
-
+      UserDataModal? user = context.read<AuthenticationCubit>().userDateModel;
 
     return state is LogoutLoading ? const CustomCircularprogindicator(): Center(
       child: SizedBox(
         height: MediaQuery
             .sizeOf(context)
-            .height * .65,
+            .height *.65,
         child: Card(
           margin:  EdgeInsets.all(margin.toDouble()),
           color: AppColors.kWhiteColor,
@@ -49,13 +50,13 @@ class ProfileView extends StatelessWidget {
                     child: Icon(Icons.person, size: 35,),
                   ),
                   const SizedBox(height: 16),
-                  const Text(
-                    'User name',
+                   Text(
+                    user?.name ??'User name',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10),
-                  const Text(
-                    ' User Email',
+                   Text(
+                   user?.email ??' User Email',
                     style:  TextStyle(),
                   ),
                   const SizedBox(height: 10,),
@@ -74,12 +75,10 @@ class ProfileView extends StatelessWidget {
                   const SizedBox(height: 10,),
                   CustomRowBtn(
                     onTap: ()async {
-
-
                   await context.read<AuthenticationCubit>().signOut();
                     },
                     icon: Icons.logout,
-                    label: 'Logout',),
+                    label: 'Logout',)
 
 
                 ],

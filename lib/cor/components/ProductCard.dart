@@ -22,6 +22,7 @@ class Productcard extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
+
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(16),
                       bottomRight: Radius.circular(16),
@@ -31,6 +32,7 @@ class Productcard extends StatelessWidget {
                     CasheImage(
                  //     key: form key,
                       url: 'https://img.freepik.com/free-psd/black-friday-special-sale-social-media-post-design-template_47987-17538.jpg?t=st=1734987248~exp=1734990848~hmac=f6e35959bbcb50562ad458da1d5e6368036dfc117595cc402de8a209cb6b8c58&w=740',
+
                     )
                 ),
                 Positioned(
@@ -101,3 +103,104 @@ class Productcard extends StatelessWidget {
     );
   }
 }
+class pro extends StatelessWidget {
+  const pro({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        navigateTo(context, ProductDetailsViews());
+      },
+      child: Card(
+        child: SizedBox(
+          height: 250, // تحديد ارتفاع مناسب لكل عنصر
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded( // يجعل الصورة تأخذ المساحة المتاحة دون تجاوز
+                child: Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(16),
+                        bottomRight: Radius.circular(16),
+                        bottomLeft: Radius.circular(16),
+                      ),
+                      child: CasheImage(
+                        url: 'https://img.freepik.com/free-psd/black-friday-special-sale-social-media-post-design-template_47987-17538.jpg',
+                      ),
+                    ),
+                    Positioned(
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: 70,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          color: AppColors.kPrimaryColor,
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(16),
+                            bottomRight: Radius.circular(16),
+                          ),
+                        ),
+                        child: Text(
+                          '10% OFF',
+                          style: TextStyle(color: AppColors.kWhiteColor),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Product Name",
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.favorite, color: AppColors.kGreyColor),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "200 LE",
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "120 LE",
+                              style: TextStyle(
+                                decoration: TextDecoration.lineThrough,
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.kGreyColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                        CustomElevatedBtn(text: 'Buy Now', onTap: () {}),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+

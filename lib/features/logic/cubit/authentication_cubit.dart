@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:our_market/features/logic/modal/user_modals.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 part 'authentication_state.dart';
 class AuthenticationCubit extends Cubit<AuthenticationState> {
@@ -14,6 +15,8 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
       //log("Trying to log in with Email: '${email.trim()}', Password Length: ${password.trim().length}");
 
       await client.auth.signInWithPassword(password: password, email: email);
+      await geyUserDate();
+
       emit(LoginSuccess());
     } on AuthException catch (e) {
       log(e.toString());
@@ -35,6 +38,7 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
         data: {'name': name}, // تخزين الاسم مع الحساب الجديد
       );
       await addUserDate(name: name, email: email);
+      await geyUserDate();
       emit(SignupSuccess());
 
     } on AuthException catch (e) {
@@ -70,12 +74,14 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
         return AuthResponse();
       }
 
-      AuthResponse response =await client.auth.signInWithIdToken(
+      AuthResponse response = await client.auth.signInWithIdToken(
         provider: OAuthProvider.google,
         idToken: idToken,
         accessToken: accessToken,
       );
       await addUserDate(name: googleUser!.displayName!, email: googleUser!.email);
+      await geyUserDate();
+
       emit(GoogleSigneSuccess());
       return response;
     }
@@ -124,5 +130,29 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
 
       }
 
+  UserDataModal? userDateModel;
+  Future<void>geyUserDate () async{
+  emit(GetUserDateLoading());
+
+       try{
+         final data = await client
+             .from('user')
+             .select().eq("user_id", client.auth.currentUser!.id);
+         userDateModel = UserDataModal(
+           name: data[0]['name'] ,
+           email: data[0]['email'],
+           userId: data[0]['user_id'],
+         );
+        // log(data.toString());
+         emit(GetUserDateSuccess());
+
+       }catch(e){
+         log(e.toString());
+         emit(GetUserDateError());
+       }
+       }
 }
+
+
+
 

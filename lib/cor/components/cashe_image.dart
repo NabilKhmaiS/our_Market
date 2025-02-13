@@ -9,6 +9,7 @@ class CasheImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
+
          //height: 250,
      width: double.infinity,
       imageUrl:   url,

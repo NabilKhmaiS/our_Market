@@ -42,6 +42,13 @@ final class UserDateAddedError extends AuthenticationState {
 
 }
 
+final class GetUserDateLoading extends AuthenticationState{}
+final class GetUserDateSuccess extends AuthenticationState{}
+final class GetUserDateError extends AuthenticationState {
+
+}
+
+
 
 
 
